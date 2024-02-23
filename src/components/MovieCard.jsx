@@ -1,28 +1,27 @@
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { toggleShowDetails } from "../store/slices/moviesSlice";
+import PropTypes from "prop-types";
 import ShowDetails from "./ShowDetails";
+import { useState } from "react";
 
-const MovieCard = () => {
-  const showDetails = useSelector((store) => store.movies.showDetails);
-  const dispatch = useDispatch();
+const MovieCard = ({ movie }) => {
+  const [showDetails, setShowDetails] = useState(false);
+  const { original_title, poster_path, release_date } = movie;
 
   const handleMovieCardEnter = () => {
-    dispatch(toggleShowDetails());
+    setShowDetails(true);
   };
   const handleMovieCardLeave = () => {
-    dispatch(toggleShowDetails());
+    setShowDetails(false);
   };
 
   return (
-    <div className="relative md:w-[220px] w-[190px]">
+    <div className="relative md:w-[220px] w-[170px]">
       <div
         onMouseEnter={handleMovieCardEnter}
         onMouseLeave={handleMovieCardLeave}
-        className="relative md:w-[220px] w-[190px] md:h-[300px] h-[270px] rounded-md overflow-hidden cursor-pointer"
+        className="relative md:w-[220px] w-[170px] md:h-[300px] h-[250px] rounded-md overflow-hidden cursor-pointer"
       >
         <img
-          src="https://media.themoviedb.org/t/p/w220_and_h330_face/AbFtI353N2Pggl5TxfsI2VtpUt8.jpg"
+          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
           className="object-cover w-full h-full"
           alt=""
         />
@@ -31,14 +30,18 @@ const MovieCard = () => {
             showDetails ? "bottom-[0]" : "bottom-[-100%]"
           } md:absolute left-0 bg-gradient-to-t from-black  w-full h-full flex items-end transition-all duration-200 p-4`}
         >
-          <ShowDetails />
+          <ShowDetails title={original_title} releaseDate={release_date} />
         </div>
       </div>
       <div className="px-1 my-1 md:hidden">
-        <ShowDetails />
+        <ShowDetails title={original_title} releaseDate={release_date} />
       </div>
     </div>
   );
 };
 
 export default MovieCard;
+
+MovieCard.propTypes = {
+  movie: PropTypes.object.isRequired,
+};

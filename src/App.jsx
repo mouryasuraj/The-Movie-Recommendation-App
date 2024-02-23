@@ -9,6 +9,7 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import WatchList from "./components/WatchList";
 import Login from "./components/Login";
+import Error from "./components/Error";
 
 const appRouter = createBrowserRouter([
   {
@@ -43,7 +44,12 @@ const appRouter = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
+      {
+        path: "error",
+        element: <Error />,
+      },
     ],
+    errorElement: <Error />,
   },
 ]);
 
