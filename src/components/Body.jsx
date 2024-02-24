@@ -3,7 +3,6 @@ import Header from "./Header";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 const Body = () => {
-
   const theme = useSelector((store) => store.theme.theme);
 
   /* eslint-disable */
@@ -14,7 +13,7 @@ const Body = () => {
   /* eslint-enable */
 
   return (
-    <div className="dark:bg-slate-900 bg-slate-200 w-full min-h-screen ">
+    <div className="dark:bg-slate-800 bg-slate-200 w-full min-h-screen ">
       <Header />
       <Outlet />
     </div>

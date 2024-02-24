@@ -6,16 +6,16 @@ const Header = () => {
   const { theme, menuBar, handleMenuBar, handleTheme } = useHeader();
 
   return (
-    <div className="w-full px-4 py-3 fixed top-0 left-0 dark:bg-slate-950 bg-slate-100 z-[100]">
+    <div className="w-full px-4 py-3 fixed top-0 left-0 dark:bg-slate-900 dark:bg-opacity-50 bg-opacity-80 backdrop-blur-[14px] bg-slate-100 z-[100]">
       <div className="max-w-[1200px] flex items-center justify-between mx-auto">
         {/* logo */}
         <div>
           <Link to="/">
             <h1
               title="The Movie Recommendation App"
-              className="md:text-3xl text-xl dark:text-slate-200 text-slate-900 w-fit tracking-widest border-b-8 border-slate-800 cursor-pointer select-none"
+              className="md:text-3xl text-xl dark:text-slate-200 text-slate-900 w-fit tracking-widest border-b-8 border-slate-600 cursor-pointer select-none"
             >
-              TMRA.
+              TMRA
             </h1>
           </Link>
         </div>
