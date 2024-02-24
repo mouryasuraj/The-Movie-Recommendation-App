@@ -6,31 +6,13 @@ const HomeShimmer = () => {
     <div>
       <BannerShimmer />
       <div>
-        <div className="mx-auto flex items-center justify-center gap-4 mt-10">
+        <div className="mx-auto flex flex-wrap items-center justify-center gap-4 mt-10">
           <MovieCardShimmer />
           <MovieCardShimmer />
           <MovieCardShimmer />
           <MovieCardShimmer />
           <MovieCardShimmer />
           <MovieCardShimmer />
-        </div>
-        <div className="mx-auto flex items-center justify-center gap-4 mt-10">
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-        </div>
-        <div className="mx-auto flex items-center justify-center gap-4 mt-10">
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-          <MovieCardShimmer />
-        </div>
-        <div className="mx-auto flex items-center justify-center gap-4 mt-10">
           <MovieCardShimmer />
           <MovieCardShimmer />
           <MovieCardShimmer />

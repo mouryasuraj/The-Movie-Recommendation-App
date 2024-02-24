@@ -40,7 +40,7 @@ const Header = () => {
           <div className="">
             <ul
               ref={menuBar}
-              className="flex md:flex-row flex-col md:items-center md:gap-0 gap-[2px] md:relative absolute md:top-0 md:right-0 top-0 right-[-100%] md:w-fit w-[60%] md:bg-transparent bg-slate-700 md:py-0 py-20 md:h-fit h-screen transition-all duration-300 rounded-l-lg"
+              className="flex md:flex-row flex-col md:items-center md:gap-2 gap-[2px] md:relative absolute md:top-0 md:right-0 top-0 right-[-100%] md:w-fit w-[60%] md:bg-transparent bg-slate-700 md:py-0 py-20 md:h-fit h-screen transition-all duration-300 rounded-l-lg"
             >
               {/* theme */}
               <NavItems itemName="Home" toUrl="" />
