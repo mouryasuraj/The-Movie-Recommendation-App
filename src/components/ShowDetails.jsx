@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+import useShowDetails from "../hooks/useShowDetails";
 
 const ShowDetails = ({ title, releaseDate }) => {
+  const { year, month, date } = useShowDetails(releaseDate);
+
   return (
-    <div className="text-slate-300 text-left w-full">
+    <div className="dark:text-slate-200 text-slate-900 md:text-slate-200 text-left w-full">
       <h1 className="text-lg font-bold italic line-clamp-1 ">{title}</h1>
-      <p>{releaseDate}</p>
+      <p>{`${month} ${date}, ${year}`}</p>
     </div>
   );
 };

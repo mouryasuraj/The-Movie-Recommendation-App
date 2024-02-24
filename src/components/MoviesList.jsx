@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-
 import MovieCard from "./MovieCard";
+
 const MoviesList = ({ name, movies }) => {
-  if (!movies) return null;
+  if (!movies) return <p>Loading....</p>;
 
   return (
-    <div className="w-full lg:pl-20 pl-3 py-10">
+    <div className="w-full lg:pl-20 pl-3 py-5">
       <h2 className="md:text-3xl text-xl font-bold text-slate-900 dark:text-slate-200 mb-4">
         {name}
       </h2>

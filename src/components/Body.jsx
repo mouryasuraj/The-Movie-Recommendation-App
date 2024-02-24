@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import Header from "./Header";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-
 const Body = () => {
+
   const theme = useSelector((store) => store.theme.theme);
 
   /* eslint-disable */

@@ -8,7 +8,16 @@ export const OPTIONS = {
 };
 
 // TMDB Now Playing Movies
-export const NOW_PLAYING_MOVIES_API = 'https://api.themoviedb.org/3/movie/popular?page=1'
+export const NOW_PLAYING_MOVIES_API = 'https://api.themoviedb.org/3/movie/now_playing?page=1'
 
-//Banner Quote
-export const QUOTE = 'Movies are not just a form of entertainment; they are a powerful medium that has the ability to inspire, educate, and leave a lasting impact on the audience.'
+// TMDB popular Movies
+export const POPULAR_MOVIES_API = 'https://api.themoviedb.org/3/movie/popular?page=1'
+
+// TMDB top Rated Movies
+export const TOP_RATED_MOVIES_API = 'https://api.themoviedb.org/3/movie/top_rated?page=1'
+
+// TMDB Up coming Movies
+export const UP_COMING_MOVIES_API = 'https://api.themoviedb.org/3/movie/upcoming?page=1'
+
+// Banner Backdrop Image
+export const BACKDROP_IMAGE = 'https://image.tmdb.org/t/p/w1280/'

@@ -18,11 +18,11 @@ const MovieCard = ({ movie }) => {
       <div
         onMouseEnter={handleMovieCardEnter}
         onMouseLeave={handleMovieCardLeave}
-        className="relative md:w-[220px] w-[170px] md:h-[300px] h-[250px] rounded-md overflow-hidden cursor-pointer"
+        className="relative md:w-[220px] w-[170px] border-[3px] border-slate-100 md:hover:scale-[.95] transition-all duration-200 md:h-[300px] h-[250px] rounded-md overflow-hidden cursor-pointer bg-slate-100"
       >
         <img
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full rounded-[4px]"
           alt=""
         />
         <div

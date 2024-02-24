@@ -6,18 +6,20 @@ import { addNowPlaying } from "../store/slices/moviesSlice";
 import { useSelector } from "react-redux";
 
 
-const useHome = () => {
+const useNowPLaying = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const nowPlaying = useSelector((store) => store.movies.nowPlaying);
 
+
+
     /*eslint-disable */
     useEffect(() => {
-        !nowPlaying && fetchPopularMovies();
+        !nowPlaying && fetchNowPlayingMovies();
     }, []);
     /*eslint-enable */
 
-    const fetchPopularMovies = async () => {
+    const fetchNowPlayingMovies = async () => {
         try {
             const data = await fetch(NOW_PLAYING_MOVIES_API, OPTIONS);
             const json = await data.json();
@@ -30,4 +32,4 @@ const useHome = () => {
     return { nowPlaying }
 }
 
-export default useHome
+export default useNowPLaying
