@@ -5,31 +5,31 @@ const useShowDetails = (releaseDate) => {
     const date = releaseDate.slice(8, 10);
     let month = Number(releaseDate.slice(5, 7));
     switch (month) {
-        case 0:
+        case 1:
             month = "Jan";
             break;
-        case 1:
+        case 2:
             month = "Feb";
             break;
-        case 2:
+        case 3:
             month = "Mar";
             break;
-        case 3:
+        case 4:
             month = "Apr";
             break;
-        case 4:
+        case 5:
             month = "May";
             break;
-        case 5:
+        case 6:
             month = "Jun";
             break;
-        case 6:
+        case 7:
             month = "Jul";
             break;
-        case 7:
+        case 8:
             month = "Aug";
             break;
-        case 8:
+        case 9:
             month = "Sep";
             break;
         case 10:
