@@ -5,7 +5,8 @@ import Sun from "./Sun";
 import Moon from "./Moon";
 
 const Header = () => {
-  const { theme, menuBar, handleMenuBar, handleTheme } = useHeader();
+  const { theme, menuBar, isMenuOpen, handleMenuBar, handleTheme } =
+    useHeader();
 
   return (
     <div className="w-full px-4 py-3 fixed top-0 left-0 dark:bg-slate-900 dark:bg-opacity-50 bg-opacity-80 backdrop-blur-[14px] bg-slate-100 z-[100] transition-colors duration-300">
@@ -33,12 +34,14 @@ const Header = () => {
           {/* Menu Bar */}
           <i
             onClick={handleMenuBar}
-            className="fa-solid fa-bars md:hidden cursor-pointer dark:text-slate-100 text-slate-400 text-3xl z-[1000]"
+            className={`fa-solid fa-bars md:hidden cursor-pointer dark:text-slate-100 ${
+              isMenuOpen ? " text-slate-900" : "text-slate-100"
+            } text-3xl z-[1000]`}
           ></i>
-          <div className="">
+          <div>
             <ul
               ref={menuBar}
-              className="flex md:flex-row flex-col md:items-center md:gap-2 gap-[2px] md:relative absolute md:top-0 md:right-0 top-0 right-[-100%] md:w-fit w-[60%] md:bg-transparent bg-slate-700 md:py-0 py-20 md:h-fit h-screen transition-all duration-300 rounded-l-lg"
+              className="flex md:flex-row flex-col md:items-center md:gap-2 gap-[2px] md:relative absolute md:top-0 md:right-0 top-0 right-[-100%] md:w-fit w-[60%] md:bg-transparent bg-slate-700 md:py-0 py-20 md:h-fit h-screen transition-all duration-300 z-9"
             >
               {/* theme */}
               <NavItems itemName="Home" toUrl="" />
@@ -52,6 +55,12 @@ const Header = () => {
                   <p className="relative transition-all duration-500">LOGIN</p>
                 </li>
               </Link>
+              <div
+                onClick={handleMenuBar}
+                className={`md:hidden ${
+                  !isMenuOpen ? "fixed" : ""
+                } top-0 left-0 w-screen h-screen bg-black z-[-1] bg-opacity-70`}
+              ></div>
             </ul>
           </div>
         </div>
