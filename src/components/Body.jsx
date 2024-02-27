@@ -13,7 +13,7 @@ const Body = () => {
   /* eslint-enable */
 
   return (
-    <div className="dark:bg-slate-700 bg-slate-200 w-full min-h-screen ">
+    <div className="dark:bg-slate-700 bg-slate-200 w-full min-h-screen transition-colors duration-300  ">
       <Header />
       <Outlet />
     </div>

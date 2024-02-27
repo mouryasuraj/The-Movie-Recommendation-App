@@ -14,9 +14,9 @@ const MoviesList = ({ name, movies }) => {
   };
 
   return (
-    <div className="w-full lg:pl-20 pl-3 py-5">
+    <div className="w-full lg:pl-20 pl-3 py-5 ">
       <div className="flex items-center md:pb-3 justify-between md:pr-5">
-        <h2 className="md:text-3xl text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+        <h2 className="md:text-3xl text-xl font-bold text-slate-900 dark:text-slate-100 mb-4 transition-colors duration-300">
           {name}
         </h2>
         <div className="flex gap-4">

@@ -10,6 +10,7 @@ import ContactUs from "./components/ContactUs";
 import WatchList from "./components/WatchList";
 import Login from "./components/Login";
 import Error from "./components/Error";
+import MovieInfo from "./components/MovieInfo";
 
 const appRouter = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const appRouter = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "/:movie_name/:movie_id",
+        element: <MovieInfo />,
       },
       {
         path: "error",

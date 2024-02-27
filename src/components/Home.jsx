@@ -23,7 +23,7 @@ const Home = () => {
         style={{ backgroundImage: `url(${BACKDROP_IMAGE + backdrop_path})` }}
         className="relative w-full md:h-[70vh] h-[40vh] bg-no-repeat bg-cover bg-center bg-none cursor-pointer"
       >
-        <div className="w-full h-full md:px-10 px-2 bg-black bg-opacity-50">
+        <div className="w-full h-full md:px-10 px-2 bg-black bg-opacity-40">
           <div className="absolute md:top-[50%] bottom-0 max-w-[800px] flex justify-end gap-6 flex-col md:pb-20 pb-5">
             <h2 className=" text-slate-100 font-semibold md:text-4xl pb-1 md:border-b-4 w-fit text-2xl italic ">
               {original_title}

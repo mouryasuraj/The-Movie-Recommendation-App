@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 import NavItems from "./NavItems";
 import useHeader from "../hooks/useHeader";
+import Sun from "./Sun";
+import Moon from "./Moon";
 
 const Header = () => {
   const { theme, menuBar, handleMenuBar, handleTheme } = useHeader();
 
   return (
-    <div className="w-full px-4 py-3 fixed top-0 left-0 dark:bg-slate-900 dark:bg-opacity-50 bg-opacity-80 backdrop-blur-[14px] bg-slate-100 z-[100]">
+    <div className="w-full px-4 py-3 fixed top-0 left-0 dark:bg-slate-900 dark:bg-opacity-50 bg-opacity-80 backdrop-blur-[14px] bg-slate-100 z-[100] transition-colors duration-300">
       <div className="max-w-[1200px] flex items-center justify-between mx-auto">
         {/* logo */}
         <div>
           <Link to="/">
             <h1
               title="The Movie Recommendation App"
-              className="md:text-3xl text-xl dark:text-slate-200 text-slate-900 w-fit tracking-widest border-b-8 border-slate-600 cursor-pointer select-none"
+              className="md:text-3xl text-xl dark:text-slate-200 text-slate-900 w-fit tracking-widest border-b-8 border-slate-600 dark:border-slate-400 cursor-pointer select-none"
             >
               TMRA
             </h1>
@@ -24,13 +26,9 @@ const Header = () => {
           {/* Theme */}
           <div
             onClick={handleTheme}
-            className="md:text-2xl text-xl p-1 cursor-pointer md:hover:scale-125 md:transition-all md:duration-300 md:mx-2 mx-4"
+            className="md:text-2xl text-xl p-1 cursor-pointer md:mx-2 mx-4"
           >
-            <i
-              className={`fa-regular fa-${
-                theme ? "moon" : "sun"
-              } dark:text-slate-100 text-slate-900 `}
-            ></i>
+            {!theme ? <Sun /> : <Moon />}
           </div>
           {/* Menu Bar */}
           <i
