@@ -1,5 +1,5 @@
 const MovieInfo = () => {
-  return <div className="w-full min-h-screen bg-red-500"></div>;
+  return <div className="w-full min-h-screen"></div>;
 };
 
 export default MovieInfo;
