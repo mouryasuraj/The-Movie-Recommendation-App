@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import useShowDetails from "../hooks/useShowDetails";
+import calculateReleaseDate from "../utils/calculateRealeaseDate";
 
 const ShowDetails = ({ title, releaseDate }) => {
-  const { year, month, date } = useShowDetails(releaseDate);
+  const { year, month, date } = calculateReleaseDate(releaseDate);
 
   return (
     <div className="dark:text-slate-200 text-slate-900 md:text-slate-200 text-left w-full">

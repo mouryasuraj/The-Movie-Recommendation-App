@@ -46,7 +46,7 @@ const Header = () => {
               {/* theme */}
               <NavItems itemName="Home" toUrl="" />
               <NavItems itemName="Search" toUrl="search" />
-              <NavItems itemName="Generes" toUrl="generes" />
+              <NavItems itemName="Genres" toUrl="generes" />
               <NavItems itemName="About US" toUrl="about" />
               <NavItems itemName="Contact US" toUrl="contact" />
               <NavItems itemName="Watchlist" toUrl="watchlist" />

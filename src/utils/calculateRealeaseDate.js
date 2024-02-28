@@ -1,6 +1,4 @@
-
-
-const useShowDetails = (releaseDate) => {
+const calculateReleaseDate = (releaseDate) => {
     const year = Number(releaseDate.slice(0, 4));
     const date = releaseDate.slice(8, 10);
     let month = Number(releaseDate.slice(5, 7));
@@ -42,8 +40,6 @@ const useShowDetails = (releaseDate) => {
             month = "Dec";
             break;
     }
-
     return { year, date, month }
 }
-
-export default useShowDetails
+export default calculateReleaseDate

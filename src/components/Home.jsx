@@ -1,5 +1,5 @@
 import MoviesList from "./MoviesList";
-import { BACKDROP_IMAGE } from "../utils/constant";
+import { TMDB_IMAGE } from "../utils/constant";
 import useNowPLaying from "../hooks/useNowPlaying";
 import usePopular from "../hooks/usePopular";
 import useTopRated from "../hooks/useTopRated";
@@ -20,7 +20,7 @@ const Home = () => {
     <div>
       {/* Poster */}
       <div
-        style={{ backgroundImage: `url(${BACKDROP_IMAGE + backdrop_path})` }}
+        style={{ backgroundImage: `url(${TMDB_IMAGE + backdrop_path})` }}
         className="relative w-full md:h-[70vh] h-[40vh] bg-no-repeat bg-cover bg-center bg-none cursor-pointer"
       >
         <div className="w-full h-full md:px-10 px-2 bg-black bg-opacity-40">

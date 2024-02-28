@@ -20,4 +20,5 @@ export const TOP_RATED_MOVIES_API = 'https://api.themoviedb.org/3/movie/top_rate
 export const UP_COMING_MOVIES_API = 'https://api.themoviedb.org/3/movie/upcoming?page=1'
 
 // Banner Backdrop Image
-export const BACKDROP_IMAGE = 'https://image.tmdb.org/t/p/w1280/'
+export const TMDB_IMAGE = 'https://image.tmdb.org/t/p/original/'
+
