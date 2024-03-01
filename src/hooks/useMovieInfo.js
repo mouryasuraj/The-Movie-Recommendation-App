@@ -14,6 +14,7 @@ const useMovieInfo = () => {
     /*eslint-disable */
     useEffect(() => {
         fetchMovieDetails();
+        window.scrollTo(0, 0)
         return () => dispatch(addMovieDetails(null))
     }, []);
     /*eslint-enable */

@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import appStore from "./store/appStore";
 import Home from "./components/Home";
 import Search from "./components/Search";
-import Generes from "./components/Generes";
+import Genres from "./components/Genres";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import WatchList from "./components/WatchList";
@@ -26,8 +26,8 @@ const appRouter = createBrowserRouter([
         element: <Search />,
       },
       {
-        path: "/generes",
-        element: <Generes />,
+        path: "/genres/:genreType",
+        element: <Genres />,
       },
       {
         path: "/about",
