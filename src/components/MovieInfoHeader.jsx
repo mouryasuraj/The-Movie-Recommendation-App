@@ -1,44 +1,8 @@
-import { Link } from "react-router-dom";
-import useMovieInfo from "../hooks/useMovieInfo";
-import calculateMovieDuration from "../utils/calculateMovieDuration";
-import calculateReleaseDate from "../utils/calculateRealeaseDate";
-import { TMDB_IMAGE } from "../utils/constant";
-import IMDBIcon from "./IMDBIcon";
-import MovieInfoHeader from "./MovieInfoHeader";
 
-const MovieInfo = () => {
-  const { isMobile, movieDetails } = useMovieInfo();
-  if (!movieDetails)
-    return <p className="text-slate-200 pt-48 text-3xl">Loading.....</p>;
-  const {
-    backdrop_path,
-    poster_path,
-    original_title,
-    release_date,
-    genres,
-    tagline,
-    overview,
-    status,
-    runtime,
-    imdb_id,
-    budget,
-    revenue,
-  } = movieDetails;
-  const { year, date, month } = calculateReleaseDate(release_date);
-  const { hour, minute } = calculateMovieDuration(runtime);
 
+const MovieInfoHeader = () => {
   return (
-    <div
-      style={{
-        backgroundImage: `${
-          isMobile
-            ? `url(${TMDB_IMAGE + poster_path})`
-            : `url(${TMDB_IMAGE + backdrop_path})`
-        }`,
-      }}
-      className="w-screen min-h-[100vh] md:min-h-[90vh] bg-no-repeat bg-cover bg-center"
-    >
-      <div className="w-full bg-slate-700 md:min-h-[90vh] min-h-[100vh] bg-opacity-60 backdrop-blur-xl md:pt-32 pt-24 px-4">
+    <div className="w-full bg-slate-700 md:min-h-[90vh] min-h-[100vh] bg-opacity-60 backdrop-blur-xl md:pt-32 pt-24 px-4">
         <div className="mx-auto md:w-[1200px] flex md:flex-row flex-col md:items-center md:justify-normal md:gap-10 gap-5 w-full">
           <div className="overflow-hidden rounded-lg cursor-pointer relative">
             <i className="fa-solid fa-plus absolute top-[0] left-0 z-[99] p-2 bg-slate-900 rounded-ee-sm text-slate-100 md:hover:bg-slate-800"></i>
@@ -115,8 +79,7 @@ const MovieInfo = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+  )
+}
 
-export default MovieInfo;
+export default MovieInfoHeader
