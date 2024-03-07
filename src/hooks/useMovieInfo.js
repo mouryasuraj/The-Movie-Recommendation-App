@@ -2,8 +2,8 @@
 import { OPTIONS } from "../utils/constant";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addMovieDetails } from "../store/slices/moviesInfoSlice";
 import { useParams } from "react-router-dom";
+import { addMovieDetails } from "../store/slices/moviesInfoSlice";
 
 const useMovieInfo = () => {
     const { movie_id } = useParams();
@@ -15,10 +15,13 @@ const useMovieInfo = () => {
     useEffect(() => {
         fetchMovieDetails();
         window.scrollTo(0, 0)
-        return () => dispatch(addMovieDetails(null))
+        return () => {
+            dispatch(addMovieDetails(null))
+        }
     }, []);
     /*eslint-enable */
 
+    // fetchMovieDetails
     const fetchMovieDetails = async () => {
         const data = await fetch(
             `https://api.themoviedb.org/3/movie/${movie_id}?language=en-US`,
@@ -28,7 +31,7 @@ const useMovieInfo = () => {
         dispatch(addMovieDetails(json))
     };
 
-    return { isMobile, movieDetails }
+    return { isMobile, movieDetails, movie_id }
 }
 
 export default useMovieInfo;

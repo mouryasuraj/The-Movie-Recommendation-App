@@ -4,7 +4,7 @@ const useMovieCard = (movie) => {
     const [showDetails, setShowDetails] = useState(false);
     const navigate = useNavigate();
     const { original_title, poster_path, release_date, id, title } = movie;
-    const toURL = `${title
+    const toURL = `movie/${title
         .replace(/[^\w\s]/gi, "")
         .toLowerCase()
         .replace(/\s+/g, "-")}/${id}`

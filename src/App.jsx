@@ -11,6 +11,7 @@ import WatchList from "./components/WatchList";
 import Login from "./components/Login";
 import Error from "./components/Error";
 import MovieInfo from "./components/MovieInfo";
+import PersonDetails from "./components/PersonDetails";
 
 const appRouter = createBrowserRouter([
   {
@@ -46,12 +47,12 @@ const appRouter = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/:movie_name/:movie_id",
+        path: "movie/:movie_name/:movie_id",
         element: <MovieInfo />,
       },
       {
-        path: "error",
-        element: <Error />,
+        path: "/person/:person_name/:person_id",
+        element: <PersonDetails />,
       },
     ],
     errorElement: <Error />,
