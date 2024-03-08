@@ -36,7 +36,7 @@ const MovieIndividualCast = ({ cast }) => {
           title={character}
           className="px-2 md:text-md text-[15px] font-semibold dark:text-slate-50 line-clamp-1"
         >
-          {character}
+          {"as " + character}
         </p>
       </div>
     </div>

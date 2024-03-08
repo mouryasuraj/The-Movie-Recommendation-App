@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import modifyURL from "../utils/modifyURL";
 const useMovieCard = (movie) => {
     const [showDetails, setShowDetails] = useState(false);
     const navigate = useNavigate();
     const { original_title, poster_path, release_date, id, title } = movie;
-    const toURL = `movie/${title
-        .replace(/[^\w\s]/gi, "")
-        .toLowerCase()
-        .replace(/\s+/g, "-")}/${id}`
+    const toURL = `movie/${modifyURL(title)}/${id}`
 
     const handleMovieCardEnter = () => {
         setShowDetails(true);

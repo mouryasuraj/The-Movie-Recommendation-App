@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import Error from "./components/Error";
 import MovieInfo from "./components/MovieInfo";
 import PersonDetails from "./components/PersonDetails";
+import CastAndCrews from "./components/CastAndCrews";
 
 const appRouter = createBrowserRouter([
   {
@@ -23,15 +24,15 @@ const appRouter = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/search",
+        path: "search",
         element: <Search />,
       },
       {
-        path: "/genres/:genreType",
+        path: "genres/:genreType",
         element: <Genres />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <AboutUs />,
       },
       {
@@ -53,6 +54,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/person/:person_name/:person_id",
         element: <PersonDetails />,
+      },
+      {
+        path: "/movie/cast&crews/:mov_name",
+        element: <CastAndCrews />,
       },
     ],
     errorElement: <Error />,

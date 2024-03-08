@@ -1,20 +1,18 @@
-import { useSelector } from "react-redux";
 import MovieIndividualCast from "./MovieIndividualCast";
 import LeftAndRightScrollFeature from "./LeftAndRightScrollFeature";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
+import useMovieCredits from "../hooks/useMovieCredits";
+import { useSelector } from "react-redux";
+import modifyURL from "../utils/modifyURL";
 
 const MovieCredits = () => {
-  const credit = useRef();
-  const movieCredits = useSelector((store) => store.moviesInfo.movieCredits);
+  const { movieCredits, credit, convertToURL } = useMovieCredits();
+  const movieDetails = useSelector((store) => store.moviesInfo.movieDetails);
   if (!movieCredits) return <p>Loading.....</p>;
   const { cast, crew } = movieCredits;
   const movieDirector = crew.filter((crew) => crew?.job === "Director");
   const movieProducer = crew.filter((crew) => crew?.job === "Producer");
   const { id, original_name } = movieDirector[0];
-  const convertToURL = (name) => {
-    return name.toLowerCase().replaceAll(" ", "-");
-  };
 
   return (
     <div className="dark:text-slate-200 text-slate-900 md:max-w-[1200px] w-full mx-auto md:px-0 py-7 px-4">
@@ -40,27 +38,36 @@ const MovieCredits = () => {
           </div>
         </div>
       </div>
-      <h1 className="text-xl dark:text-slate-100 text-slate-900 font-bold">
-        Director:{" "}
-        <Link to={`/person/${convertToURL(original_name)}/${id}`}>
-          <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold hover:underline md:no-underline underline dark:hover:text-sky-500 text-lg tracking-wide">
-            {original_name}
-          </span>
-        </Link>
-      </h1>
-      <h1 className="text-xl dark:text-slate-100 text-slate-900 font-bold">
-        {movieProducer.length === 1 ? "Producer: " : "Producers: "}
-        {movieProducer.map((producer, index) => (
-          <Link
-            key={producer.id}
-            to={`/person/${convertToURL(producer.name)}/${producer.id}`}
-          >
-            <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold hover:underline md:no-underline underline dark:hover:text-sky-500 text-lg tracking-wide">
-              {producer.name + (index === movieProducer.length - 1 ? "" : ", ")}
+      <div className="flex flex-col md:gap-1 gap-[4px]">
+        <h1 className="md:text-xl dark:text-slate-100 text-slate-900 font-bold">
+          Director:{" "}
+          <Link to={`/person/${convertToURL(original_name)}/${id}`}>
+            <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold hover:underline md:no-underline underline dark:hover:text-sky-500 md:text-lg tracking-wide">
+              {original_name}
             </span>
           </Link>
-        ))}
-      </h1>
+        </h1>
+        <h1 className="md:text-xl dark:text-slate-100 text-slate-900 font-bold">
+          {movieProducer.length === 1 ? "Producer: " : "Producers: "}
+          {movieProducer.map((producer, index) => (
+            <Link
+              key={producer.id}
+              to={`/person/${convertToURL(producer.name)}/${producer.id}`}
+            >
+              <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold hover:underline md:no-underline underline dark:hover:text-sky-500 md:text-lg tracking-wide">
+                {producer.name +
+                  (index === movieProducer.length - 1 ? "" : ", ")}
+              </span>
+            </Link>
+          ))}
+        </h1>
+        <Link
+          to={`/movie/cast&crews/${modifyURL(movieDetails.original_title)}`}
+          className="underline md:text-xl w-fit"
+        >
+          See all cast & crews
+        </Link>
+      </div>
     </div>
   );
 };

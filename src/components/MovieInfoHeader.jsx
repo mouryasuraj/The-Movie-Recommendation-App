@@ -6,7 +6,6 @@ import IMDBIcon from "./IMDBIcon";
 import { useSelector } from "react-redux";
 
 const MovieInfoHeader = () => {
-  const movieDetails = useSelector((store) => store.moviesInfo.movieDetails);
   const {
     poster_path,
     original_title,
@@ -19,7 +18,7 @@ const MovieInfoHeader = () => {
     imdb_id,
     budget,
     revenue,
-  } = movieDetails;
+  } = useSelector((store) => store.moviesInfo.movieDetails);
   const { year, date, month } = calculateReleaseDate(release_date);
   const { hour, minute } = calculateMovieDuration(runtime);
   return (
