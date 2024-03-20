@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const MovieInfoHeader = () => {
   const {
     poster_path,
-    original_title,
+    title,
     release_date,
     genres,
     tagline,
@@ -29,13 +29,13 @@ const MovieInfoHeader = () => {
           <img
             className="md:w-[400px] w-[170px] lg:h-[450px] hover:scale-110 transition-all duration-200 object-cover rounded-lg"
             src={TMDB_IMAGE + poster_path}
-            alt={original_title + "Poster"}
+            alt={title + "Poster"}
           />
         </div>
         <div className="w-full flex flex-col gap-1">
           <div className="flex md:flex-col flex-wrap md:gap-2 gap-4">
             <h1 className="text-slate-200 md:text-4xl text-lg font-bold">
-              {original_title}
+              {title}
               <span className="font-normal text-slate-300">{`(${year})`}</span>
             </h1>
             <div className="flex gap-3">
@@ -77,7 +77,7 @@ const MovieInfoHeader = () => {
             {overview}
           </p>
           <div className="flex items-center gap-4 text-slate-300 md:text-lg">
-            <IMDBIcon imdbId={imdb_id} />
+            {imdb_id && <IMDBIcon imdbId={imdb_id} />}
             <div className="flex items-center gap-3">
               {budget > 0 && (
                 <p>

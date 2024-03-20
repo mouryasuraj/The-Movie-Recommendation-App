@@ -4,7 +4,7 @@ import modifyURL from "../utils/modifyURL";
 const useMovieCard = (movie) => {
     const [showDetails, setShowDetails] = useState(false);
     const navigate = useNavigate();
-    const { original_title, poster_path, release_date, id, title } = movie;
+    const { poster_path, release_date, id, title } = movie;
     const toURL = `movie/${modifyURL(title)}/${id}`
 
     const handleMovieCardEnter = () => {
@@ -21,7 +21,7 @@ const useMovieCard = (movie) => {
         navigate(toURL);
     };
 
-    return { showDetails, original_title, poster_path, release_date, toURL, handleMovieCardEnter, handleMovieCardLeave, handleAddToWatchlist, handleGotoMoviesInfo }
+    return { showDetails, title, poster_path, release_date, toURL, handleMovieCardEnter, handleMovieCardLeave, handleAddToWatchlist, handleGotoMoviesInfo }
 
 }
 export default useMovieCard;

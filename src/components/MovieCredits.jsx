@@ -19,7 +19,7 @@ const MovieCredits = () => {
       <div>
         <div className="flex items-center justify-between">
           <h2 className="text-xl md:text-2xl font-bold">Top Cast</h2>
-          <LeftAndRightScrollFeature reference={credit} />
+          {cast.length > 7 && <LeftAndRightScrollFeature reference={credit} />}
         </div>
         <div
           ref={credit}
@@ -42,27 +42,29 @@ const MovieCredits = () => {
         <h1 className="md:text-xl dark:text-slate-100 text-slate-900 font-bold">
           Director:{" "}
           <Link to={`/person/${convertToURL(original_name)}/${id}`}>
-            <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold hover:underline md:no-underline underline dark:hover:text-sky-500 md:text-lg tracking-wide">
+            <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold underline dark:hover:text-sky-500 md:text-lg tracking-wide">
               {original_name}
             </span>
           </Link>
         </h1>
         <h1 className="md:text-xl dark:text-slate-100 text-slate-900 font-bold">
-          {movieProducer.length === 1 ? "Producer: " : "Producers: "}
-          {movieProducer.map((producer, index) => (
-            <Link
-              key={producer.id}
-              to={`/person/${convertToURL(producer.name)}/${producer.id}`}
-            >
-              <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold hover:underline md:no-underline underline dark:hover:text-sky-500 md:text-lg tracking-wide">
-                {producer.name +
-                  (index === movieProducer.length - 1 ? "" : ", ")}
-              </span>
-            </Link>
-          ))}
+          {movieProducer.length > 0 &&
+            (movieProducer.length === 1 ? "Producer: " : "Producers: ")}
+          {movieProducer.length > 0 &&
+            movieProducer.map((producer, index) => (
+              <Link
+                key={producer.id}
+                to={`/person/${convertToURL(producer.name)}/${producer.id}`}
+              >
+                <span className="cursor-pointer dark:text-sky-200 text-sky-600 font-semibold underline dark:hover:text-sky-500 md:text-lg tracking-wide">
+                  {producer.name +
+                    (index === movieProducer.length - 1 ? "" : `, `)}
+                </span>
+              </Link>
+            ))}
         </h1>
         <Link
-          to={`/movie/cast&crews/${modifyURL(movieDetails.original_title)}`}
+          to={`/movie/cast&crews/${modifyURL(movieDetails.title)}`}
           className="underline md:text-xl w-fit"
         >
           See all cast & crews

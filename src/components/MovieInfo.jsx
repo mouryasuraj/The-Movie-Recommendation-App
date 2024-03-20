@@ -1,8 +1,8 @@
-
 import useMovieInfo from "../hooks/useMovieInfo";
 import { TMDB_IMAGE } from "../utils/constant";
 import MovieCredits from "./MovieCredits";
 import MovieInfoHeader from "./MovieInfoHeader";
+import MovieVideo from "./MovieVideo";
 
 const MovieInfo = () => {
   const { isMobile, movieDetails } = useMovieInfo();
@@ -11,7 +11,7 @@ const MovieInfo = () => {
   const { backdrop_path, poster_path } = movieDetails;
 
   return (
-    <div>
+    <div className="relative">
       <div
         style={{
           backgroundImage: `${
@@ -25,6 +25,7 @@ const MovieInfo = () => {
         <MovieInfoHeader />
       </div>
       <MovieCredits />
+      <MovieVideo />
     </div>
   );
 };

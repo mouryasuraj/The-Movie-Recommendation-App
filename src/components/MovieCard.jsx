@@ -5,9 +5,9 @@ import useMovieCard from "../hooks/useMovieCard";
 const MovieCard = ({ movie }) => {
   const {
     showDetails,
-    original_title,
     release_date,
     poster_path,
+    title,
     handleMovieCardEnter,
     handleMovieCardLeave,
     handleAddToWatchlist,
@@ -29,7 +29,11 @@ const MovieCard = ({ movie }) => {
           className="fa-solid fa-plus absolute top-[0] left-0 z-[99] p-2 bg-slate-900 rounded-ee-sm text-slate-100 md:hover:bg-slate-800"
         ></i>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+          src={`${
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+              : "https://www.reelviews.net/resources/img/default_poster.jpg"
+          }`}
           className="object-cover w-full h-full rounded-[4px]"
           alt=""
         />
@@ -38,11 +42,11 @@ const MovieCard = ({ movie }) => {
             showDetails ? "bottom-[0]" : "bottom-[-100%]"
           } md:absolute left-0 bg-gradient-to-t from-black  w-full h-full flex items-end transition-all duration-200 p-4`}
         >
-          <ShowDetails title={original_title} releaseDate={release_date} />
+          <ShowDetails title={title} releaseDate={release_date} />
         </div>
       </div>
       <div className="px-1 my-1 md:hidden">
-        <ShowDetails title={original_title} releaseDate={release_date} />
+        <ShowDetails title={title} releaseDate={release_date} />
       </div>
     </div>
   );

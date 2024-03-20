@@ -3,7 +3,7 @@ import { OPTIONS } from "../utils/constant";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addMovieDetails } from "../store/slices/moviesInfoSlice";
+import { addMovieDetails, addMovieVideos } from "../store/slices/moviesInfoSlice";
 
 const useMovieInfo = () => {
     const { movie_id } = useParams();
@@ -17,6 +17,7 @@ const useMovieInfo = () => {
         window.scrollTo(0, 0)
         return () => {
             dispatch(addMovieDetails(null))
+            dispatch(addMovieVideos(null))
         }
     }, []);
     /*eslint-enable */
