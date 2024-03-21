@@ -4,8 +4,9 @@ import useMovieVideos from "../hooks/useMovieVideos";
 
 const MovieVideo = () => {
   const videoRef = useRef();
+  const videoPlayer = useRef();
   const { movieVideos, videoKey, handleCloseVideo, playVideo } =
-    useMovieVideos();
+    useMovieVideos(videoPlayer);
   if (!movieVideos) return null;
 
   return (
@@ -54,6 +55,7 @@ const MovieVideo = () => {
         </div>
       </div>
       <div
+        ref={videoPlayer}
         onClick={handleCloseVideo}
         className="w-full h-full fixed top-[-15px] left-0 bg-black z-[100] bg-opacity-75 hidden flex-col items-center justify-center"
       >
