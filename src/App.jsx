@@ -13,6 +13,7 @@ import Error from "./components/Error";
 import MovieInfo from "./components/MovieInfo";
 import PersonDetails from "./components/PersonDetails";
 import CastAndCrews from "./components/CastAndCrews";
+import AllImages from "./components/AllImages";
 
 const appRouter = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const appRouter = createBrowserRouter([
       {
         path: "movie/:movie_name/:movie_id",
         element: <MovieInfo />,
+      },
+      {
+        path: "movie/:movie_name/:movie_id/images",
+        element: <AllImages />,
       },
       {
         path: "/person/:person_name/:person_id",

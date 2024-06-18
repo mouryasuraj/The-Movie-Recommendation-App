@@ -59,7 +59,7 @@ const MovieVideo = () => {
         onClick={handleCloseVideo}
         className="w-full h-full fixed top-[-15px] left-0 bg-black z-[100] bg-opacity-75 hidden flex-col items-center justify-center"
       >
-        <div className="relative space-y-2">
+        <div className="space-y-2">
           <iframe
             className="md:rounded-lg  md:w-[70vw] w-[100vw] md:h-[40vw] h-[60vw]"
             src={`https://www.youtube.com/embed/${videoKey}?autoplay=1`}
@@ -67,7 +67,7 @@ const MovieVideo = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <i className="fa-solid fa-xmark absolute md:top-[-45px] md:right-[-45px] top-[-80px] right-[10px]  text-xl px-[12.5px] cursor-pointer py-[6px] rounded-full bg-slate-100 hover:opacity-90 text-slate-900 font-bold transition-all duration-200" />
+          <i  className="fa-solid fa-xmark text-4xl absolute top-[0.5%] right-[3%] cursor-pointer px-[14px] hover:text-slate-800 transition-all duration-300 py-2 rounded-full hover:bg-white" />
         </div>
       </div>
     </div>

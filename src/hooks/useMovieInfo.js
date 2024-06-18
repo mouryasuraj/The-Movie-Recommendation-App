@@ -3,7 +3,7 @@ import { OPTIONS } from "../utils/constant";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addMovieDetails, addMovieVideos } from "../store/slices/moviesInfoSlice";
+import { addMovieDetails, addMovieVideos, addMovieImages } from "../store/slices/moviesInfoSlice";
 
 const useMovieInfo = () => {
     const { movie_id } = useParams();
@@ -18,6 +18,7 @@ const useMovieInfo = () => {
         return () => {
             dispatch(addMovieDetails(null))
             dispatch(addMovieVideos(null))
+            dispatch(addMovieImages(null))
         }
     }, []);
     /*eslint-enable */

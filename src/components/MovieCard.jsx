@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import ShowDetails from "./ShowDetails";
 import useMovieCard from "../hooks/useMovieCard";
+import { posterAltName } from "../utils/constant";
 
 const MovieCard = ({ movie }) => {
   const {
@@ -35,7 +36,7 @@ const MovieCard = ({ movie }) => {
               : "https://www.reelviews.net/resources/img/default_poster.jpg"
           }`}
           className="object-cover w-full h-full rounded-[4px]"
-          alt=""
+          alt={`${title} ${posterAltName}`}
         />
         <div
           className={`${
