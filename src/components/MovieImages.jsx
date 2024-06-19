@@ -12,7 +12,7 @@ const MovieImages = () => {
   return (
     <div className="max-w-[1200px] dark:text-slate-200 text-slate-900 mx-auto md:px-0 px-4 space-y-4 pb-4">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold">
+        <h2 className="text-xl md:text-2xl mt-5 font-bold">
           Images ({movieImage.backdrops.length})
         </h2>
         {movieImage.backdrops.length > 3 && (
@@ -30,7 +30,7 @@ const MovieImages = () => {
                 <img
                   key={index}
                   onClick={() => handleShowImage(image.file_path)}
-                  className="w-[300px] h-[200px] object-cover rounded-md cursor-pointer hover:opacity-80"
+                  className="md:w-[30vw] w-[40vw]   md:h-[200px] object-cover rounded-md cursor-pointer hover:opacity-80"
                   src={TMDB_IMAGE + image.file_path}
                   alt={movie_name}
                 />
@@ -47,9 +47,9 @@ const MovieImages = () => {
       {showImageSlider && (
         <div onClick={handleCloseImage} className="w-full h-screen flex items-center justify-center bg-black z-[1000] fixed top-[-15px] left-0 px-5 bg-opacity-70">
           {/* Image */}
-          <img onClick={(e)=> e.stopPropagation()} className="w-[90%] h-[90%] rounded-lg object-cover" src={TMDB_IMAGE + imagePath} alt="" />
+          <img onClick={(e)=> e.stopPropagation()} className="w-fit h-[90%] rounded-lg object-contain" src={TMDB_IMAGE + imagePath} alt="" />
           {/* Close Button */}
-          <i onClick={handleCloseImage} className="fa-solid fa-xmark text-4xl absolute top-[1%] right-[1%] cursor-pointer px-[14px] hover:text-slate-800 transition-all duration-300 py-2 rounded-full hover:bg-white" />
+          <i onClick={handleCloseImage} className="fa-solid fa-xmark text-4xl absolute top-[1%] right-[7%] cursor-pointer px-[14px] hover:text-slate-800 transition-all text-white duration-300 py-2 rounded-full hover:bg-white" />
         </div>
         
       )}

@@ -67,7 +67,7 @@ const MovieVideo = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <i  className="fa-solid fa-xmark text-4xl absolute top-[0.5%] right-[3%] cursor-pointer px-[14px] hover:text-slate-800 transition-all duration-300 py-2 rounded-full hover:bg-white" />
+          <i  className="fa-solid fa-xmark text-4xl absolute top-[0.5%] right-[3%] cursor-pointer px-[14px] hover:text-slate-800 transition-all duration-300 text-white py-2 rounded-full hover:bg-white" />
         </div>
       </div>
     </div>
